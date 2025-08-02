@@ -7,7 +7,7 @@ function App() {
   const [userData, setUserData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [searchUser, setSearchUser] = useState("octocat14141");
+  const [searchUser, setSearchUser] = useState("torvalds");
 
   useEffect(() => {
     async function getUser() {
