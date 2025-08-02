@@ -10,7 +10,7 @@ const UserCard = ({ userData }) => {
     .join(" ");
 
   return (
-    <section>
+    <section className="user-container">
       <div className="user-profile">
         <picture>
           <source media="(min-width:350px)" srcSet="" />

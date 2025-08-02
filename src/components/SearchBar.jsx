@@ -1,5 +1,6 @@
 import { useState } from "react";
 import searchIcon from "../assets/icon-search.svg";
+import Button from "./Button";
 
 const SearchBar = ({ error, setSearchUser }) => {
   const [search, setSearch] = useState("");
@@ -22,13 +23,11 @@ const SearchBar = ({ error, setSearchUser }) => {
         id="username"
       />
       <span>{error && error}</span>
-      <button
-        type="submit"
-        onClick={() => setSearchUser(search)}
-        className="search-btn"
-      >
-        Search
-      </button>
+      <Button
+        classname="search-btn"
+        text="Search"
+        handleOnClick={() => setSearchUser(search)}
+      />
     </form>
   );
 };

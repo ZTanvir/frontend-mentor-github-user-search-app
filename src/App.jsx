@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import UserCard from "./components/UserCard";
 import SearchBar from "./components/SearchBar";
+import Theme from "./components/Theme";
 
 const url = `https://api.github.com/users`;
 
@@ -9,6 +10,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchUser, setSearchUser] = useState("torvalds");
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     async function getUser() {
@@ -38,6 +40,7 @@ function App() {
     <main>
       <div>
         <h1>devfinder</h1>
+        <Theme theme={theme} setTheme={setTheme} />
       </div>
       <SearchBar setSearchUser={setSearchUser} error={error} />
       <UserCard userData={userData} />
