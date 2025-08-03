@@ -9,6 +9,8 @@ const UserCard = ({ userData }) => {
     .slice(1)
     .join(" ");
 
+  console.log(userData);
+
   return (
     <section className="user-container">
       <div className="user-profile">
@@ -43,21 +45,25 @@ const UserCard = ({ userData }) => {
         <div>
           <a href="#">
             <img src={locationImg} alt="location of the user" />
-            {userData.location}
+            {Boolean(userData.location) ? userData.location : "Not available"}
           </a>
           <a href="#">
             <img src={websiteImg} alt="blog of the user" />
-            {userData.blog}
+            {Boolean(userData.blog) ? userData.blog : "Not available"}
           </a>
         </div>
         <div>
           <a href={userData.twitter_username}>
             <img src={twitterImg} alt="twitter account of the user" />
-            {userData.twitter_username}
+            {Boolean(userData.twitter_username)
+              ? userData.twitter_username
+              : "Not available"}
           </a>
           <a href={userData.organizations_url}>
             <img src={companyImg} alt="company website of the user" />
-            {userData.organizations_url}
+            {Boolean(userData.organizations_url)
+              ? userData.organizations_url
+              : "Not available"}
           </a>
         </div>
       </div>
