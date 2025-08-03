@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 import UserCard from "./components/UserCard";
 import SearchBar from "./components/SearchBar";
 import Theme from "./components/Theme";
