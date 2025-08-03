@@ -11,7 +11,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchUser, setSearchUser] = useState("torvalds");
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("LIGHT");
 
   useEffect(() => {
     async function getUser() {
