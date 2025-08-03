@@ -11,6 +11,7 @@ const SearchBar = ({ error, setSearchUser }) => {
   return (
     <form onSubmit={handleFormSubmit} id="search-bar">
       <img
+        className="search-icon"
         src={searchIcon}
         alt="magnifying glass icon that will help to search"
       />
@@ -20,6 +21,7 @@ const SearchBar = ({ error, setSearchUser }) => {
         type="text"
         name="username"
         id="username"
+        placeholder="Search Github username..."
       />
       <span>{error && error}</span>
       <Button

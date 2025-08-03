@@ -89,6 +89,29 @@ html {
   font-size: 26px;
   font-weight: bold;
 }
+#search-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+#search-bar > input {
+  border: none;
+  flex: 1;
+  outline: none;
+  height: 100%;
+}
+.search-icon {
+}
+.search-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+}
+.search-btn:hover {
+  cursor: pointer;
+}
 
 [data-stack] {
   --gutter: initial;
