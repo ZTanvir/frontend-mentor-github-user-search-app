@@ -39,9 +39,9 @@ function App() {
   if (isLoading) return <p>Loading</p>;
 
   return (
-    <main>
-      <div>
-        <h1>devfinder</h1>
+    <main data-stack style={{ "--gutter": "1rem" }}>
+      <div className="page-title">
+        <h1 className="title">devfinder</h1>
         <Theme theme={theme} setTheme={setTheme} />
       </div>
       <SearchBar setSearchUser={setSearchUser} error={error} />

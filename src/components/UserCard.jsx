@@ -9,8 +9,6 @@ const UserCard = ({ userData }) => {
     .slice(1)
     .join(" ");
 
-  console.log(userData);
-
   return (
     <section className="user-container">
       <div className="user-profile">

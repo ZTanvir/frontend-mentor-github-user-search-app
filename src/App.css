@@ -68,3 +68,20 @@ h6 {
 html {
   font-family: "Space Mono", monospace;
 }
+.page-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+[data-stack] {
+  --gutter: initial;
+  display: grid;
+  gap: var(--gutter, 0px);
+  align-content: start;
+}
