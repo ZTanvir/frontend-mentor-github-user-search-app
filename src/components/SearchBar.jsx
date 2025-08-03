@@ -6,7 +6,6 @@ const SearchBar = ({ error, setSearchUser }) => {
   const [search, setSearch] = useState("");
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setSearch("");
   };
 
   return (

@@ -24,6 +24,7 @@ function App() {
         }
         if (response.status === 200) {
           setUserData(data);
+          setError(null);
         }
       } catch (error) {
         setError(error.message);
