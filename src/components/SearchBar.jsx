@@ -2,7 +2,7 @@ import { useState } from "react";
 import searchIcon from "../assets/icon-search.svg";
 import Button from "./Button";
 
-const SearchBar = ({ error, setSearchUser }) => {
+const SearchBar = ({ error, setError, setSearchUser }) => {
   const [search, setSearch] = useState("");
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -17,13 +17,20 @@ const SearchBar = ({ error, setSearchUser }) => {
       />
       <input
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => {
+          const typedText = e.target.value;
+          setSearch(e.target.value);
+          // remove no results msg when the input is clear
+          if (typedText === "") {
+            setError(null);
+          }
+        }}
         type="text"
         name="username"
         id="username"
         placeholder="Search Github username..."
       />
-      <span>{error && error}</span>
+      <span>{error && "No results"}</span>
       <Button
         classname="search-btn"
         text="Search"

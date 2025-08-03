@@ -44,7 +44,11 @@ function App() {
         <h1 className="title">devfinder</h1>
         <Theme theme={theme} setTheme={setTheme} />
       </div>
-      <SearchBar setSearchUser={setSearchUser} error={error} />
+      <SearchBar
+        setSearchUser={setSearchUser}
+        error={error}
+        setError={setError}
+      />
       <UserCard userData={userData} />
     </main>
   );
