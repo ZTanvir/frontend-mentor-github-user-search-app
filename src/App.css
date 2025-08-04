@@ -135,6 +135,16 @@ html {
   font-weight: bold;
   font-size: 22px;
 }
+.user-social a {
+  text-decoration: none;
+}
+.user-social a:hover {
+  text-decoration: underline;
+}
+.user-social a > img {
+  width: 16px;
+  height: 16px;
+}
 
 [data-stack] {
   --gutter: initial;
@@ -156,4 +166,11 @@ html {
 }
 [data-split~="fraction:1/1"] {
   grid-template-columns: 1fr 1fr;
+}
+[data-inline] {
+  --gutter: initial;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gutter, 0px);
 }

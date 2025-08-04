@@ -36,29 +36,45 @@ const UserCard = ({ userData }) => {
           <span>{userData.following}</span>
         </div>
       </div>
-      <div className="user-social">
-        <div>
-          <a href="#">
+      <div data-split="fraction:1/1" className="user-social">
+        <div data-stack style={{ "--gutter": "1rem" }}>
+          <a data-inline href="#" style={{ "--gutter": "1rem" }}>
             <img src={locationImg} alt="location of the user" />
-            {Boolean(userData.location) ? userData.location : "Not available"}
+            <span>
+              {Boolean(userData.location) ? userData.location : "Not available"}
+            </span>
           </a>
-          <a href="#">
+          <a data-inline href={userData.blog} style={{ "--gutter": "1rem" }}>
             <img src={websiteImg} alt="blog of the user" />
-            {Boolean(userData.blog) ? userData.blog : "Not available"}
+            <span>
+              {Boolean(userData.blog) ? userData.blog : "Not available"}
+            </span>
           </a>
         </div>
-        <div>
-          <a href={userData.twitter_username}>
+        <div data-stack style={{ "--gutter": "1rem" }}>
+          <a
+            data-inline
+            href={userData.twitter_username}
+            style={{ "--gutter": "1rem" }}
+          >
             <img src={twitterImg} alt="twitter account of the user" />
-            {Boolean(userData.twitter_username)
-              ? userData.twitter_username
-              : "Not available"}
+            <span>
+              {Boolean(userData.twitter_username)
+                ? userData.twitter_username
+                : "Not available"}
+            </span>
           </a>
-          <a href={userData.organizations_url}>
+          <a
+            data-inline
+            href={userData.organizations_url}
+            style={{ "--gutter": "1rem" }}
+          >
             <img src={companyImg} alt="company website of the user" />
-            {Boolean(userData.organizations_url)
-              ? userData.organizations_url
-              : "Not available"}
+            <span>
+              {Boolean(userData.organizations_url)
+                ? userData.organizations_url
+                : "Not available"}
+            </span>
           </a>
         </div>
       </div>
