@@ -112,8 +112,28 @@ html {
   border: none;
   border-radius: 8px;
 }
+#search-bar:hover,
 .search-btn:hover {
   cursor: pointer;
+}
+
+.user-data {
+  padding: 15px 32px;
+}
+:is(
+    .repos > span:first-child,
+    .followers > span:first-child,
+    .following > span:first-child
+  ) {
+  opacity: 0.5;
+}
+:is(
+    .repos > span:last-child,
+    .followers > span:last-child,
+    .following > span:last-child
+  ) {
+  font-weight: bold;
+  font-size: 22px;
 }
 
 [data-stack] {
@@ -121,4 +141,19 @@ html {
   display: grid;
   gap: var(--gutter, 0px);
   align-content: start;
+}
+
+[data-split] {
+  --gutter: initial;
+  display: grid;
+  gap: var(--gutter, 0px);
+}
+[data-split~="fraction:1"] {
+  grid-template-columns: 1fr;
+}
+[data-split~="fraction:1/1/1"] {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+[data-split~="fraction:1/1"] {
+  grid-template-columns: 1fr 1fr;
 }

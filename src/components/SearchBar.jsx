@@ -30,7 +30,7 @@ const SearchBar = ({ error, setError, setSearchUser }) => {
         id="username"
         placeholder="Search Github username..."
       />
-      <span>{error && "No results"}</span>
+      <span className="user-not-found-msg">{error && "No results"}</span>
       <Button
         classname="search-btn"
         text="Search"

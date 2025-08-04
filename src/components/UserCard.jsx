@@ -12,10 +12,7 @@ const UserCard = ({ userData }) => {
   return (
     <section className="user-container">
       <div className="user-profile">
-        <picture>
-          <source media="(min-width:350px)" srcSet="" />
-          <img src={userData.avatar_url} alt="" />
-        </picture>
+        <img className="desktop-avatar-img" src={userData.avatar_url} alt="" />
         <div>
           <h2>{userData.name}</h2>
           <p>{userData.login}</p>
@@ -25,16 +22,16 @@ const UserCard = ({ userData }) => {
       <p className="user-bio">
         {userData.bio === null ? "This profile has no bio" : userData.bio}
       </p>
-      <div className="user-data">
-        <div>
+      <div data-split="fraction:1/1/1" className="user-data">
+        <div data-stack className="repos">
           <span>Repos</span>
           <span>{userData.public_repos}</span>
         </div>
-        <div>
+        <div data-stack className="followers">
           <span>Followers</span>
           <span>{userData.followers}</span>
         </div>
-        <div>
+        <div data-stack className="following">
           <span>Following</span>
           <span>{userData.following}</span>
         </div>
