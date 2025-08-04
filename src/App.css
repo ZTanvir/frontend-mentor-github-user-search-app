@@ -120,6 +120,13 @@ html {
 .user-data {
   padding: 15px 32px;
 }
+.username {
+  font-size: 22px;
+  font-weight: bold;
+}
+.user-id {
+  font-size: 16px;
+}
 :is(
     .repos > span:first-child,
     .followers > span:first-child,
@@ -141,6 +148,10 @@ html {
 .user-social a:hover {
   text-decoration: underline;
 }
+.user-social div a:has(.notFound) {
+  opacity: 0.6;
+}
+
 .user-social a > img {
   width: 16px;
   height: 16px;

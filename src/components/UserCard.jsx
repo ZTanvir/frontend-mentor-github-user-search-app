@@ -14,8 +14,8 @@ const UserCard = ({ userData }) => {
       <div className="user-profile">
         <img className="desktop-avatar-img" src={userData.avatar_url} alt="" />
         <div>
-          <h2>{userData.name}</h2>
-          <p>{userData.login}</p>
+          <h2 className="username">{userData.name}</h2>
+          <h3 className="user-id">@{userData.login}</h3>
         </div>
         <p>{createdAt}</p>
       </div>
@@ -40,13 +40,13 @@ const UserCard = ({ userData }) => {
         <div data-stack style={{ "--gutter": "1rem" }}>
           <a data-inline href="#" style={{ "--gutter": "1rem" }}>
             <img src={locationImg} alt="location of the user" />
-            <span>
+            <span className={Boolean(userData.location) ? "found" : "notFound"}>
               {Boolean(userData.location) ? userData.location : "Not available"}
             </span>
           </a>
           <a data-inline href={userData.blog} style={{ "--gutter": "1rem" }}>
             <img src={websiteImg} alt="blog of the user" />
-            <span>
+            <span className={Boolean(userData.blog) ? "found" : "notFound"}>
               {Boolean(userData.blog) ? userData.blog : "Not available"}
             </span>
           </a>
@@ -58,7 +58,11 @@ const UserCard = ({ userData }) => {
             style={{ "--gutter": "1rem" }}
           >
             <img src={twitterImg} alt="twitter account of the user" />
-            <span>
+            <span
+              className={
+                !Boolean(userData.twitter_username) ? "found" : "notFound"
+              }
+            >
               {Boolean(userData.twitter_username)
                 ? userData.twitter_username
                 : "Not available"}
@@ -70,7 +74,11 @@ const UserCard = ({ userData }) => {
             style={{ "--gutter": "1rem" }}
           >
             <img src={companyImg} alt="company website of the user" />
-            <span>
+            <span
+              className={
+                Boolean(userData.organizations_url) ? "found" : "notFound"
+              }
+            >
               {Boolean(userData.organizations_url)
                 ? userData.organizations_url
                 : "Not available"}
