@@ -203,14 +203,38 @@ html {
   gap: var(--gutter, 0px);
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  html {
+    background-color: yellow;
+  }
+  .desktop-avatar-img {
+    display: none;
+  }
+}
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  html {
+    background-color: red;
+  }
+  .desktop-avatar-img {
+    display: none;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  html {
+    background-color: blue;
+  }
+  .desktop-avatar-img {
+    display: none;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  html {
+    background-color: green;
+  }
 }
