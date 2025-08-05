@@ -67,6 +67,12 @@ h6 {
 }
 html {
   font-family: "Space Mono", monospace;
+  width: 100vw;
+  height: 100vh;
+  align-content: center;
+}
+main {
+  padding: 1rem;
 }
 .page-title {
   display: flex;
@@ -117,19 +123,22 @@ html {
   cursor: pointer;
 }
 .user-container {
-  grid-template-rows: fit-content;
   padding: 48px;
 }
-.user-container > img {
-  grid-column: 1/1;
+.desktop-avatar-img {
+  display: none;
   width: 110px;
   height: 110px;
   border-radius: 50%;
 }
-.user-descriptions {
-  grid-column: 2/3;
+.mobile-avatar-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
+
 .user-profile {
+  align-items: center;
 }
 .user-data {
   padding: 15px 32px;
@@ -141,6 +150,7 @@ html {
 .user-id {
   font-size: 16px;
 }
+
 :is(
     .repos > span:first-child,
     .followers > span:first-child,
@@ -156,6 +166,7 @@ html {
   font-weight: bold;
   font-size: 22px;
 }
+
 .user-social a {
   text-decoration: none;
 }
@@ -171,13 +182,78 @@ html {
   height: 16px;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  main {
+    margin: 1rem;
+  }
+  .user-social {
+    grid-template-columns: 1fr;
+    --gutter: 1rem;
+  }
+  :is(
+      .repos > span:last-child,
+      .followers > span:last-child,
+      .following > span:last-child
+    ) {
+    text-align: center;
+  }
+  :is(
+      .repos > span:last-child,
+      .followers > span:last-child,
+      .following > span:last-child
+    ) {
+    text-align: center;
+  }
+  :is(
+      .repos > span:first-child,
+      .followers > span:first-child,
+      .following > span:first-child
+    ) {
+    text-align: center;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  main {
+    width: 800px;
+  }
+  .desktop-avatar-img {
+    display: block;
+  }
+  .mobile-avatar-img {
+    display: none;
+  }
+  .user-profile {
+    grid-template-columns: 1fr;
+  }
+  .user-profile > div {
+    grid-template-columns: 1fr 1fr;
+  }
+  .join-time {
+    justify-self: flex-end;
+  }
+  .user-container {
+    grid-template-columns: auto 1fr;
+  }
+  .user-social {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 [data-stack] {
   --gutter: initial;
   display: grid;
   gap: var(--gutter, 0px);
   align-content: start;
 }
-
 [data-split] {
   --gutter: initial;
   display: grid;
@@ -203,38 +279,7 @@ html {
   gap: var(--gutter, 0px);
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  html {
-    background-color: yellow;
-  }
-  .desktop-avatar-img {
-    display: none;
-  }
-}
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  html {
-    background-color: red;
-  }
-  .desktop-avatar-img {
-    display: none;
-  }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  html {
-    background-color: blue;
-  }
-  .desktop-avatar-img {
-    display: none;
-  }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  html {
-    background-color: green;
-  }
+[data-center] {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 }

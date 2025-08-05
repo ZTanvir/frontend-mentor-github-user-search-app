@@ -12,26 +12,45 @@ const UserCard = ({ userData }) => {
   return (
     <section
       style={{ "--gutter": "1rem" }}
-      data-split="fraction:auto/1"
+      data-split="fraction:1"
       className="user-container"
     >
-      <img className="desktop-avatar-img" src={userData.avatar_url} alt="" />
+      <img
+        className="desktop-avatar-img"
+        src={userData.avatar_url}
+        alt="person face"
+      />
       <div
         data-stack
         style={{ "--gutter": "1rem" }}
         className="user-descriptions"
       >
-        <div data-split="fraction:1/1" className="user-profile">
-          <div>
-            <h2 className="username">{userData.name}</h2>
-            <h3 className="user-id">@{userData.login}</h3>
+        <div
+          data-split="fraction:auto/1"
+          className="user-profile"
+          style={{ "--gutter": "1rem" }}
+        >
+          <img
+            className="mobile-avatar-img"
+            src={userData.avatar_url}
+            alt="person face"
+          />
+          <div data-split="fraction:1">
+            <div>
+              <h2 className="username">{userData.name}</h2>
+              <h3 className="user-id">@{userData.login}</h3>
+            </div>
+            <p className="join-time">Joined {createdAt}</p>
           </div>
-          <p>Joined {createdAt}</p>
         </div>
         <p className="user-bio">
           {userData.bio === null ? "This profile has no bio" : userData.bio}
         </p>
-        <div data-split="fraction:1/1/1" className="user-data">
+        <div
+          data-split="fraction:1/1/1"
+          style={{ "--gutter": "1rem" }}
+          className="user-data"
+        >
           <div data-stack className="repos">
             <span>Repos</span>
             <span>{userData.public_repos}</span>
@@ -45,7 +64,11 @@ const UserCard = ({ userData }) => {
             <span>{userData.following}</span>
           </div>
         </div>
-        <div data-split="fraction:1/1" className="user-social">
+        <div
+          data-split="fraction:1"
+          className="user-social"
+          style={{ "--gutter": "1rem" }}
+        >
           <div data-stack style={{ "--gutter": "1rem" }}>
             <a data-inline href="#" style={{ "--gutter": "1rem" }}>
               <img src={locationImg} alt="location of the user" />

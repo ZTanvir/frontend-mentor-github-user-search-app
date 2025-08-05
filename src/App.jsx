@@ -39,7 +39,7 @@ function App() {
   if (isLoading) return <p>Loading</p>;
 
   return (
-    <main data-stack style={{ "--gutter": "1rem" }}>
+    <main data-center data-stack style={{ "--gutter": "1rem" }}>
       <div className="page-title">
         <h1 className="title">devfinder</h1>
         <Theme theme={theme} setTheme={setTheme} />
