@@ -71,7 +71,12 @@ const UserCard = ({ loading, userData }) => {
           style={{ "--gutter": "1rem" }}
         >
           <div data-stack style={{ "--gutter": "1rem" }}>
-            <a data-inline href="#" style={{ "--gutter": "1rem" }}>
+            <a
+              target="_blank"
+              data-inline
+              href="#"
+              style={{ "--gutter": "1rem" }}
+            >
               <img src={locationImg} alt="location of the user" />
               <span
                 className={Boolean(userData.location) ? "found" : "notFound"}
@@ -81,7 +86,12 @@ const UserCard = ({ loading, userData }) => {
                   : "Not available"}
               </span>
             </a>
-            <a data-inline href={userData.blog} style={{ "--gutter": "1rem" }}>
+            <a
+              target="_blank"
+              data-inline
+              href={userData.blog}
+              style={{ "--gutter": "1rem" }}
+            >
               <img src={websiteImg} alt="blog of the user" />
               <span className={Boolean(userData.blog) ? "found" : "notFound"}>
                 {Boolean(userData.blog) ? userData.blog : "Not available"}
@@ -90,6 +100,7 @@ const UserCard = ({ loading, userData }) => {
           </div>
           <div data-stack style={{ "--gutter": "1rem" }}>
             <a
+              target="_blank"
               data-inline
               href={userData.twitter_username}
               style={{ "--gutter": "1rem" }}
@@ -107,6 +118,7 @@ const UserCard = ({ loading, userData }) => {
             </a>
             <a
               data-inline
+              target="_blank"
               href={userData.html_url}
               style={{ "--gutter": "1rem" }}
             >

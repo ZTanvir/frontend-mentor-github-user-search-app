@@ -237,9 +237,6 @@ main {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  main {
-    margin: 1rem;
-  }
   .user-container {
     padding: 32px 24px;
   }
