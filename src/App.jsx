@@ -3,7 +3,6 @@ import "./App.css";
 import UserCard from "./components/UserCard";
 import SearchBar from "./components/SearchBar";
 import Theme from "./components/Theme";
-import Loading from "./components/Loading";
 
 const url = `https://api.github.com/users`;
 
@@ -31,18 +30,11 @@ function App() {
       } catch (error) {
         setError(error.message);
       } finally {
-        // setIsLoading(false);
+        setIsLoading(false);
       }
     }
     getUser();
   }, [searchUser]);
-
-  if (isLoading)
-    return (
-      <main data-center="center-children">
-        <Loading />
-      </main>
-    );
 
   return (
     <main data-center data-stack style={{ "--gutter": "1rem" }}>
@@ -55,7 +47,7 @@ function App() {
         error={error}
         setError={setError}
       />
-      <UserCard userData={userData} />
+      <UserCard loading={isLoading} userData={userData} />
     </main>
   );
 }

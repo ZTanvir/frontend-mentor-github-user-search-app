@@ -2,19 +2,20 @@ import locationImg from "../assets/icon-location.svg";
 import companyImg from "../assets/icon-company.svg";
 import twitterImg from "../assets/icon-twitter.svg";
 import websiteImg from "../assets/icon-website.svg";
+import Loading from "../components/Loading";
 
-const UserCard = ({ userData }) => {
-  const createdAt = String(new Date(userData.created_at).toDateString())
-    .split(" ")
-    .slice(1)
-    .join(" ");
+const UserCard = ({ loading, userData }) => {
+  const createdAt =
+    loading === true
+      ? userData &&
+        String(new Date(userData.created_at).toDateString())
+          .split(" ")
+          .slice(1)
+          .join(" ")
+      : null;
 
-  return (
-    <section
-      style={{ "--gutter": "1rem" }}
-      data-split="fraction:1"
-      className="user-container"
-    >
+  const cardData = userData ? (
+    <>
       <img
         className="desktop-avatar-img"
         src={userData.avatar_url}
@@ -121,6 +122,28 @@ const UserCard = ({ userData }) => {
           </div>
         </div>
       </div>
+    </>
+  ) : (
+    <h2 data-center>Not found</h2>
+  );
+
+  return (
+    <section
+      style={{ "--gutter": "1rem" }}
+      data-split="fraction:1"
+      className="user-container"
+    >
+      {loading ? (
+        <div
+          className="loading-container"
+          style={loading ? { minHeight: "380px" } : { minHeight: "auto" }}
+          data-center="center-children"
+        >
+          <Loading />
+        </div>
+      ) : (
+        cardData
+      )}
     </section>
   );
 };
