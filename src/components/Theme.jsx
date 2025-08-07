@@ -5,6 +5,7 @@ import moonIcon from "../assets/icon-moon.svg";
 const Theme = ({ theme, setTheme }) => {
   const handleThemeChangeBtn = (e) => {
     const newTheme = theme === "LIGHT" ? "DARK" : "LIGHT";
+    document.body.classList.toggle("dark-theme");
     setTheme(newTheme);
   };
   return (

@@ -43,6 +43,7 @@ function App() {
         <Theme theme={theme} setTheme={setTheme} />
       </div>
       <SearchBar
+        setIsLoading={setIsLoading}
         setSearchUser={setSearchUser}
         error={error}
         setError={setError}

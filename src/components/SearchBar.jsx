@@ -2,19 +2,23 @@ import { useState } from "react";
 import searchIcon from "../assets/icon-search.svg";
 import Button from "./Button";
 
-const SearchBar = ({ error, setError, setSearchUser }) => {
+const SearchBar = ({ setIsLoading, error, setError, setSearchUser }) => {
   const [search, setSearch] = useState("");
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
   };
 
   return (
     <form onSubmit={handleFormSubmit} id="search-bar">
-      <img
-        className="search-icon"
-        src={searchIcon}
-        alt="magnifying glass icon that will help to search"
-      />
+      <label htmlFor="username">
+        <img
+          className="search-icon"
+          src={searchIcon}
+          alt="magnifying glass icon that will help to search"
+        />
+      </label>
+
       <input
         value={search}
         onChange={(e) => {
