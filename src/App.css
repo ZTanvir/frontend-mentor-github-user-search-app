@@ -115,7 +115,7 @@ html {
 }
 body {
   background-color: var(--bg-color-white);
-  /* transition: background-color 0.4s ease-in-out; */
+  transition: background-color 0.5s ease-in-out;
 }
 main {
   padding: 1rem;
@@ -126,6 +126,7 @@ main {
   align-items: center;
   justify-content: space-between;
   color: var(--text-color-dark);
+  transition: color 0.5s ease-in-out;
 }
 .toggleThemeBtn {
   display: flex;
@@ -134,6 +135,7 @@ main {
   background-color: transparent;
   border: none;
   color: var(--text-color-light);
+  transition: color 0.5s ease-in-out;
 }
 
 .toggleThemeBtn:hover {
@@ -155,6 +157,7 @@ main {
   -webkit-box-shadow: 0px 3px 33px -18px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 3px 33px -18px rgba(0, 0, 0, 0.75);
   background-color: var(--bg-color-romance);
+  transition: background-color 0.5s ease-in-out;
 }
 #search-bar > input {
   border: none;
@@ -206,11 +209,7 @@ main {
 .user-profile {
   align-items: center;
 }
-.user-data {
-  padding: 15px 32px;
-  background-color: var(--user-data-bg-color);
-  border-radius: 8px;
-}
+
 .username {
   font-size: 22px;
   line-height: 1.5;
@@ -231,14 +230,18 @@ main {
   color: var(--text-color-light);
 }
 .user-data {
+  padding: 15px 32px;
+  background-color: var(--user-data-bg-color);
+  transition: background-color 0.5s ease-in-out;
+  border-radius: 8px;
 }
-
 :is(
     .repos > span:first-child,
     .followers > span:first-child,
     .following > span:first-child
   ) {
   color: var(--text-color-light);
+  transition: color 0.5s ease-in-out;
 }
 :is(
     .repos > span:last-child,
@@ -248,6 +251,7 @@ main {
   font-weight: bold;
   font-size: 22px;
   color: var(--text-color-dark);
+  transition: color 0.5s ease-in-out;
 }
 .user-social a {
   text-decoration: none;
