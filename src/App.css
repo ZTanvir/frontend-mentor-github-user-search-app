@@ -258,6 +258,9 @@ main {
   width: 16px;
   height: 16px;
 }
+.user-container:has(h2) {
+  color: var(--text-color-dark);
+}
 .loading-container {
   justify-content: center;
 }
