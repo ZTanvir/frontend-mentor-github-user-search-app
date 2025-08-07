@@ -9,7 +9,7 @@ const url = `https://api.github.com/users`;
 
 function App() {
   const [userData, setUserData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchUser, setSearchUser] = useState("torvalds");
   const [theme, setTheme] = useState("LIGHT");
@@ -35,7 +35,7 @@ function App() {
       }
     }
     getUser();
-  }, [searchUser]);
+  }, [searchUser, isLoading]);
 
   return (
     <ThemeContext value={{ theme, setTheme }}>
@@ -45,6 +45,7 @@ function App() {
           <Theme theme={theme} setTheme={setTheme} />
         </div>
         <SearchBar
+          searchUser={searchUser}
           setIsLoading={setIsLoading}
           setSearchUser={setSearchUser}
           error={error}

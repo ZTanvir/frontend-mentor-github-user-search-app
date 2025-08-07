@@ -2,10 +2,18 @@ import { useState } from "react";
 import searchIcon from "../assets/icon-search.svg";
 import Button from "./Button";
 
-const SearchBar = ({ setIsLoading, error, setError, setSearchUser }) => {
+const SearchBar = ({
+  setIsLoading,
+  error,
+  setError,
+  searchUser,
+  setSearchUser,
+}) => {
   const [search, setSearch] = useState("");
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    setSearchUser(search);
     setIsLoading(true);
   };
 
@@ -21,6 +29,7 @@ const SearchBar = ({ setIsLoading, error, setError, setSearchUser }) => {
 
       <input
         value={search}
+        autoComplete="off"
         onChange={(e) => {
           const typedText = e.target.value;
           setSearch(e.target.value);
@@ -35,11 +44,7 @@ const SearchBar = ({ setIsLoading, error, setError, setSearchUser }) => {
         placeholder="Search Github username..."
       />
       <span className="user-not-found-msg">{error && "No results"}</span>
-      <Button
-        classname="search-btn"
-        text="Search"
-        handleOnClick={() => setSearchUser(search)}
-      />
+      <Button classname="search-btn" text="Search" />
     </form>
   );
 };

@@ -88,6 +88,8 @@ h6 {
   --text-color-light: var(--color-tealish-blue);
   --text-input-placeholder: var(--color-gunmetal);
   --user-data-bg-color: var(--bg-color-white);
+  --loader-border-color: #f3f3f3;
+  --loader-border-top-color: #3498db;
 
   --color-user-id: var(--color-cyan-blue);
   --error-msg: var(--color-red);
@@ -102,6 +104,8 @@ h6 {
   --text-color-light: var(--color-romance);
   --text-input-placeholder: var(--color-white);
   --user-data-bg-color: var(--color-mirage);
+  --loader-border-color: rgba(255, 255, 255, 0.3);
+  --loader-border-top-color: #ffffff;
 }
 html {
   font-family: "Space Mono", monospace;
@@ -111,6 +115,7 @@ html {
 }
 body {
   background-color: var(--bg-color-white);
+  /* transition: background-color 0.4s ease-in-out; */
 }
 main {
   padding: 1rem;
@@ -277,8 +282,8 @@ main {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 5px solid wheat;
-  border-top: 5px solid red;
+  border: 5px solid var(--loader-border-color);
+  border-top: 5px solid var(--loader-border-top-color);
   animation: spinner 1s linear infinite;
 }
 
