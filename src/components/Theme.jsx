@@ -1,8 +1,12 @@
 import Button from "./Button";
 import lightIcon from "../assets/icon-sun.svg";
 import moonIcon from "../assets/icon-moon.svg";
+import { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
 
-const Theme = ({ theme, setTheme }) => {
+const Theme = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
+
   const handleThemeChangeBtn = (e) => {
     const newTheme = theme === "LIGHT" ? "DARK" : "LIGHT";
     document.body.classList.toggle("dark-theme");
