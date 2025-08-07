@@ -87,6 +87,7 @@ h6 {
   --text-color-dark: var(--color-dark);
   --text-color-light: var(--color-tealish-blue);
   --text-input-placeholder: var(--color-gunmetal);
+  --user-data-bg-color: var(--bg-color-white);
 
   --color-user-id: var(--color-cyan-blue);
   --error-msg: var(--color-red);
@@ -100,6 +101,7 @@ h6 {
   --text-color-dark: var(--color-white);
   --text-color-light: var(--color-romance);
   --text-input-placeholder: var(--color-white);
+  --user-data-bg-color: var(--color-mirage);
 }
 html {
   font-family: "Space Mono", monospace;
@@ -155,7 +157,6 @@ main {
   outline: none;
   height: 100%;
   color: var(--text-input-placeholder);
-
   background-color: inherit;
 }
 #search-bar > input::placeholder {
@@ -202,6 +203,8 @@ main {
 }
 .user-data {
   padding: 15px 32px;
+  background-color: var(--user-data-bg-color);
+  border-radius: 8px;
 }
 .username {
   font-size: 22px;
