@@ -46,11 +46,11 @@ Users should be able to:
 
 ![Desktop](screenshots/light-desktop-devfinder.png)
 
-- Tablet Screen light
+- Desktop Screen light
 
 ![Desktop](screenshots/dark-desktop-devfinder.png)
 
-- Tablet Screen dark
+- Desktop Screen dark
 
 ### Links
 
